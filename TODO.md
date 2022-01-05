@@ -1,6 +1,3 @@
-# efrei-m2-prjt-aisg
-projet of architecture &amp; IS gouvernance - Timothé CHAUVET &amp; Camille MATHIEU
-
 # Architecture and IS Governance project
 
 Client <-> SOAP Train booking <-> REST Train filtering
