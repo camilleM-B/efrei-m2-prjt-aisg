@@ -1,6 +1,6 @@
-{
-  "trains": [
-    {
+[
+	{
+ 	 "train": {
       "id": "ced6a97a-00e1-579e-bafd-ad3d074577b7",
       "departureStation": "Fumdicti",
       "arrivalStation": "Deseka",
@@ -10,8 +10,11 @@
       "remainingTickets": 10,
       "travelClass": "business",
       "price": 107
-    },
+   	  }
+    }
+    ,
     {
+ 	 "train": {
       "id": "145f9e70-c531-5d59-93f3-468a208926d4",
       "departureStation": "Bumvavo",
       "arrivalStation": "Jomosav",
@@ -21,8 +24,9 @@
       "remainingTickets": 45,
       "travelClass": "standard",
       "price": 159
-    },
+    }},
     {
+    "train": {
       "id": "3255bdf6-97da-51e3-b2b4-6a1837532ab1",
       "departureStation": "Povfuslu",
       "arrivalStation": "Paboce",
@@ -32,8 +36,9 @@
       "remainingTickets": 25,
       "travelClass": "business",
       "price": 138
-    },
+    }},
     {
+    "train": {
       "id": "ac963153-096f-5ce4-9e0e-81a1de068f63",
       "departureStation": "Kohvodcu",
       "arrivalStation": "Evegafe",
@@ -43,8 +48,9 @@
       "remainingTickets": 35,
       "travelClass": "standard",
       "price": 74
-    },
+    }},
     {
+    "train": {
       "id": "6263f520-f09d-5eaa-82a1-f2102fde105e",
       "departureStation": "Docomnij",
       "arrivalStation": "Butzemer",
@@ -54,259 +60,5 @@
       "remainingTickets": 28,
       "travelClass": "business",
       "price": 154
-    },
-    {
-      "id": "7d903e53-3af8-5d93-9195-5e59ea2d9d79",
-      "departureStation": "Jefejaha",
-      "arrivalStation": "Cidiris",
-      "outboundDate": "2022-11-11T15:53:19+01:00",
-      "returnDate": "2022-11-11T18:59:20+01:00",
-      "totalTickets": 260,
-      "remainingTickets": 16,
-      "travelClass": "business",
-      "price": 88
-    },
-    {
-      "id": "b8265c4c-fce8-5d8e-8c32-d49c1076db29",
-      "departureStation": "Ludcarwo",
-      "arrivalStation": "Zapbaduh",
-      "outboundDate": "2022-12-21T06:00:26+01:00",
-      "returnDate": "2022-12-21T09:05:15+01:00",
-      "totalTickets": 104,
-      "remainingTickets": 14,
-      "travelClass": "standard",
-      "price": 22
-    },
-    {
-      "id": "d4f3ffab-10b1-52c7-9421-c13d47615d52",
-      "departureStation": "Kusospa",
-      "arrivalStation": "Rapawgi",
-      "outboundDate": "2022-11-04T00:20:13+01:00",
-      "returnDate": "2022-11-04T03:22:53+01:00",
-      "totalTickets": 191,
-      "remainingTickets": 37,
-      "travelClass": "first",
-      "price": 42
-    },
-    {
-      "id": "c19d1662-08b6-5101-ab75-ecb03be5d69f",
-      "departureStation": "Fawtocolu",
-      "arrivalStation": "Tunalle",
-      "outboundDate": "2022-05-26T11:54:53+01:00",
-      "returnDate": "2022-05-26T18:22:13+01:00",
-      "totalTickets": 341,
-      "remainingTickets": 33,
-      "travelClass": "business",
-      "price": 49
-    },
-    {
-      "id": "a9b8fa01-0f47-5ce1-b65c-dae47cd8591f",
-      "departureStation": "Topawif",
-      "arrivalStation": "Ekpudciw",
-      "outboundDate": "2022-12-06T11:49:59+01:00",
-      "returnDate": "2022-12-06T21:43:37+01:00",
-      "totalTickets": 307,
-      "remainingTickets": 1,
-      "travelClass": "standard",
-      "price": 95
-    },
-    {
-      "id": "3577ea45-ab55-51fd-848b-f4fecc36d37f",
-      "departureStation": "Lokewji",
-      "arrivalStation": "Owezuzo",
-      "outboundDate": "2022-11-04T10:24:00+01:00",
-      "returnDate": "2022-11-04T12:11:31+01:00",
-      "totalTickets": 167,
-      "remainingTickets": 43,
-      "travelClass": "standard",
-      "price": 70
-    },
-    {
-      "id": "4f5a5150-c4c5-5e33-bb8d-83d9b73aa3fd",
-      "departureStation": "Sewnosid",
-      "arrivalStation": "Mebrokal",
-      "outboundDate": "2022-06-28T12:43:19+01:00",
-      "returnDate": "2022-06-28T13:43:11+01:00",
-      "totalTickets": 371,
-      "remainingTickets": 50,
-      "travelClass": "standard",
-      "price": 100
-    },
-    {
-      "id": "f76f5349-d128-5d8b-b5f8-e00bb50fc884",
-      "departureStation": "Abpewkem",
-      "arrivalStation": "Luvepo",
-      "outboundDate": "2022-05-21T17:24:08+01:00",
-      "returnDate": "2022-05-21T18:58:11+01:00",
-      "totalTickets": 230,
-      "remainingTickets": 41,
-      "travelClass": "first",
-      "price": 182
-    },
-    {
-      "id": "e52dd941-d319-5c76-8fd4-e791785af013",
-      "departureStation": "Sowkoki",
-      "arrivalStation": "Wiizta",
-      "outboundDate": "2022-06-06T08:11:22+01:00",
-      "returnDate": "2022-06-06T10:39:07+01:00",
-      "totalTickets": 354,
-      "remainingTickets": 19,
-      "travelClass": "standard",
-      "price": 25
-    },
-    {
-      "id": "29195425-cb0e-5bfa-9703-96c8ac901b63",
-      "departureStation": "Isrewvuj",
-      "arrivalStation": "Ohrowveg",
-      "outboundDate": "2022-03-28T05:50:57+01:00",
-      "returnDate": "2022-03-28T07:24:20+01:00",
-      "totalTickets": 355,
-      "remainingTickets": 34,
-      "travelClass": "first",
-      "price": 122
-    },
-    {
-      "id": "0e0b9af4-35a9-574d-9cf5-eba3ea986100",
-      "departureStation": "Sedukobok",
-      "arrivalStation": "Uwegosit",
-      "outboundDate": "2022-05-10T05:19:53+01:00",
-      "returnDate": "2022-05-10T09:58:06+01:00",
-      "totalTickets": 310,
-      "remainingTickets": 17,
-      "travelClass": "business",
-      "price": 87
-    },
-    {
-      "id": "fa9d3071-6224-5185-acb2-86690f684a7f",
-      "departureStation": "Wenkejbic",
-      "arrivalStation": "Uvofte",
-      "outboundDate": "2022-07-30T20:51:32+01:00",
-      "returnDate": "2022-07-30T21:02:00+01:00",
-      "totalTickets": 186,
-      "remainingTickets": 20,
-      "travelClass": "business",
-      "price": 31
-    },
-    {
-      "id": "a4b8151a-205e-5574-b9b0-de4bc790e9c6",
-      "departureStation": "Tifmara",
-      "arrivalStation": "Ranadzaw",
-      "outboundDate": "2022-06-13T14:07:09+01:00",
-      "returnDate": "2022-06-13T23:27:25+01:00",
-      "totalTickets": 285,
-      "remainingTickets": 34,
-      "travelClass": "standard",
-      "price": 105
-    },
-    {
-      "id": "da1f66cc-b5d6-538c-9d0a-e15fd84784d6",
-      "departureStation": "Mionujuf",
-      "arrivalStation": "Bejufwud",
-      "outboundDate": "2022-04-28T10:01:54+01:00",
-      "returnDate": "2022-04-28T11:16:25+01:00",
-      "totalTickets": 285,
-      "remainingTickets": 29,
-      "travelClass": "first",
-      "price": 37
-    },
-    {
-      "id": "11b22a22-c3ce-548b-91ad-da920fcd845b",
-      "departureStation": "Cagalhik",
-      "arrivalStation": "Alapikme",
-      "outboundDate": "2022-07-11T10:25:47+01:00",
-      "returnDate": "2022-07-11T13:57:07+01:00",
-      "totalTickets": 106,
-      "remainingTickets": 9,
-      "travelClass": "first",
-      "price": 150
-    },
-    {
-      "id": "6323b549-ad6f-55b5-81bb-2261e6217b56",
-      "departureStation": "Cudpuhit",
-      "arrivalStation": "Pipiwsug",
-      "outboundDate": "2022-12-28T10:55:17+01:00",
-      "returnDate": "2022-12-28T13:33:50+01:00",
-      "totalTickets": 275,
-      "remainingTickets": 39,
-      "travelClass": "first",
-      "price": 152
-    },
-    {
-      "id": "9c739de7-cd70-5893-8493-305009e7da63",
-      "departureStation": "Ipiinej",
-      "arrivalStation": "Hewipjuf",
-      "outboundDate": "2022-05-29T16:09:07+01:00",
-      "returnDate": "2022-05-29T17:49:24+01:00",
-      "totalTickets": 382,
-      "remainingTickets": 20,
-      "travelClass": "standard",
-      "price": 39
-    },
-    {
-      "id": "02e37299-0895-5218-a709-57ebeb6b0d1a",
-      "departureStation": "Doshapu",
-      "arrivalStation": "Zutemagub",
-      "outboundDate": "2022-09-20T21:10:25+01:00",
-      "returnDate": "2022-09-20T22:34:16+01:00",
-      "totalTickets": 361,
-      "remainingTickets": 17,
-      "travelClass": "standard",
-      "price": 182
-    },
-    {
-      "id": "f3f67155-a224-53aa-a173-111341410177",
-      "departureStation": "Amigoda",
-      "arrivalStation": "Derujla",
-      "outboundDate": "2022-04-19T12:54:29+01:00",
-      "returnDate": "2022-04-19T15:05:24+01:00",
-      "totalTickets": 198,
-      "remainingTickets": 26,
-      "travelClass": "standard",
-      "price": 190
-    },
-    {
-      "id": "ac9186b6-5281-5956-b450-9898793fe033",
-      "departureStation": "Zovukop",
-      "arrivalStation": "Copedome",
-      "outboundDate": "2022-05-15T15:45:07+01:00",
-      "returnDate": "2022-05-15T17:49:58+01:00",
-      "totalTickets": 153,
-      "remainingTickets": 40,
-      "travelClass": "standard",
-      "price": 151
-    },
-    {
-      "id": "f66c4429-64b8-5e93-b76f-102392e3e851",
-      "departureStation": "Digfuta",
-      "arrivalStation": "Serimas",
-      "outboundDate": "2022-07-05T01:47:57+01:00",
-      "returnDate": "2022-07-05T02:26:56+01:00",
-      "totalTickets": 294,
-      "remainingTickets": 37,
-      "travelClass": "business",
-      "price": 49
-    },
-    {
-      "id": "0b5954e3-a291-512c-a6b8-e54342b4117d",
-      "departureStation": "Japfawe",
-      "arrivalStation": "Eripedfal",
-      "outboundDate": "2022-08-25T05:32:28+01:00",
-      "returnDate": "2022-08-25T07:31:21+01:00",
-      "totalTickets": 166,
-      "remainingTickets": 24,
-      "travelClass": "business",
-      "price": 48
-    },
-    {
-      "id": "56786e49-2a0f-57ba-a36e-398127d24bf0",
-      "departureStation": "Wowfowup",
-      "arrivalStation": "Ikolijupe",
-      "outboundDate": "2022-05-11T15:16:03+01:00",
-      "returnDate": "2022-05-11T17:06:33+01:00",
-      "totalTickets": 187,
-      "remainingTickets": 35,
-      "travelClass": "standard",
-      "price": 72
-    }
-  ]
-}
+    }}
+]
