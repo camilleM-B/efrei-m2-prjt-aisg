@@ -9,16 +9,18 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import static java.lang.System.out;
 
 public class Trains {
-    private Train[] trains;
+    private List<Train> trains;
 
+    // Constructor
     public Trains() {
         final ObjectMapper objectMapper = new ObjectMapper();
         try {
-            trains = objectMapper.readValue(json, Train[].class);
+            trains = objectMapper.readValue(json, new TypeReference<List<Train>>(){});
             for(Train train : trains) {
                 out.println(train);
             }
@@ -27,8 +29,30 @@ public class Trains {
         }
     }
 
-    public Train[] getArray() {
+    public List<Train> getArray() {
         return trains;
+    }
+
+    // Iterate through all trains
+    public String sellTicket(String id) {
+        for(Train train : trains) {
+            if(train.id.equals(id) && train.remainingTickets > 0) {
+                train.remainingTickets --;
+                return "OK";
+            } else if(train.id.equals(id) && train.remainingTickets == 0) {
+                return "NOTICKET";
+            }
+        }
+        return "NOTRAIN";
+    }
+
+    public String getTrain(String id) {
+        for(Train train : trains) {
+            if(train.id.equals(id)) {
+                return train.toString();
+            }
+        }
+        return "ERROR GETTING TRAIN ID='" + id + "'";
     }
 
     String json = "[\n" +
@@ -39,7 +63,7 @@ public class Trains {
             "    \"outboundDate\": \"2022-03-14T11:15:01+01:00\",\n" +
             "    \"returnDate\": \"2022-03-14T18:15:01+01:00\",\n" +
             "    \"totalTickets\": 240,\n" +
-            "    \"remainingTickets\": 10,\n" +
+            "    \"remainingTickets\": 0,\n" +
             "    \"travelClass\": \"business\",\n" +
             "    \"price\": 107\n" +
             "  },\n" +
@@ -50,7 +74,7 @@ public class Trains {
             "    \"outboundDate\": \"2022-04-26T18:35:55+01:00\",\n" +
             "    \"returnDate\": \"2022-04-26T21:31:08+01:00\",\n" +
             "    \"totalTickets\": 254,\n" +
-            "    \"remainingTickets\": 45,\n" +
+            "    \"remainingTickets\": 0,\n" +
             "    \"travelClass\": \"standard\",\n" +
             "    \"price\": 159\n" +
             "  },\n" +
