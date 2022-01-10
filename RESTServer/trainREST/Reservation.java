@@ -24,14 +24,12 @@ public class Reservation {
             System.out.println("connect to databse");
             Connection connection = DriverManager.getConnection(url,username,password);
 
+            Statement stat = connection.createStatement();
+            
             //get actual remainingtickets
 
             String sql =  "SELECT * FROM trains WHERE id ='"+ id.trim()+"'";
-
-            Statement stat = connection.createStatement();
             ResultSet result = stat.executeQuery(sql);
-            System.out.println("sql ="+sql);
-            System.out.println("reuslt ="+result);
 
             int remaining = 0;
 
@@ -40,22 +38,13 @@ public class Reservation {
                 remaining = result.getInt("remainingTickets");
             }
 
-            int remain1 = Integer.valueOf(remaining) -1;
+            if (remaining == 0){return false;}
 
+            //if tickets available update
 
-            System.out.println("sql th "+ "UPDATE trains SET remainingTickets ="+ remain1 +" WHERE id ='"+ id.trim()+"'");
-            String sql2 =  "UPDATE trains SET remainingTickets ="+ remain1 +" WHERE id ='"+ id.trim()+"'";
-            System.out.println("sql "+sql2);
-            ResultSet result2 = stat.executeQuery(sql2);
+            String sql2 =  "UPDATE trains SET remainingTickets =remainingTickets-1 WHERE id ='"+ id.trim()+"' AND remainingTickets < 0";
+            stat.executeUpdate(sql2);
 
-            System.out.println("kill me baby one more time ");
-
-            while (result2.next()) {
-                System.out.println("aaaaaaaaaaaaaaaaaa ");
-                remaining = result2.getInt("remainingTickets");
-                System.out.println("remaining " + remaining);
-            }
-            System.out.println("success!");
             connection.close();
 
         } catch (SQLException e) {
