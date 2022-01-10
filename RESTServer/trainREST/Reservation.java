@@ -1,8 +1,5 @@
 package trainREST;
 
-import org.restlet.resource.Get;
-import org.restlet.resource.Post;
-import org.restlet.resource.ServerResource;
 
 import java.sql.*;
 
@@ -14,8 +11,6 @@ public class Reservation {
     }
 
     public static boolean reservation(String id){
-
-
         String url = "jdbc:mysql://localhost:3306/tp_aisg_efrei";
         String username = "root";
         String password = "timothe123";
@@ -24,17 +19,15 @@ public class Reservation {
             System.out.println("connect to databse");
             Connection connection = DriverManager.getConnection(url,username,password);
 
-            Statement stat = connection.createStatement();
-            
             //get actual remainingtickets
-
+            
             String sql =  "SELECT * FROM trains WHERE id ='"+ id.trim()+"'";
+            Statement stat = connection.createStatement();
             ResultSet result = stat.executeQuery(sql);
 
             int remaining = 0;
 
             while (result.next()) {
-
                 remaining = result.getInt("remainingTickets");
             }
 
@@ -44,7 +37,6 @@ public class Reservation {
 
             String sql2 =  "UPDATE trains SET remainingTickets =remainingTickets-1 WHERE id ='"+ id.trim()+"' AND remainingTickets < 0";
             stat.executeUpdate(sql2);
-
             connection.close();
 
         } catch (SQLException e) {
