@@ -1,4 +1,4 @@
-package trainREST;
+package restserver.restserver;
 
 import org.restlet.Application;
 import org.restlet.Restlet;

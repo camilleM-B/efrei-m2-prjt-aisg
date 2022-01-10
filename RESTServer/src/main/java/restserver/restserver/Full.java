@@ -1,4 +1,4 @@
-package trainREST;
+package restserver.restserver;
 
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
@@ -13,8 +13,8 @@ public class Full extends ServerResource {
         String nbrtickets = (String) getRequestAttributes().get("nbrtickets");
         String Tclass = (String) getRequestAttributes().get("class");
 
-        return "The train departing from \"" + astation + "\"  the \"" + ddate	+
-                "\" to \"" + dstation + "\" the \"" + adate+
+        return "The train departing from \"" + astation + "\"  the \"" + ddate +
+                "\" to \"" + dstation + "\" the \"" + adate +
                 "\" of class \"" + Tclass +
                 "\" with \"" + nbrtickets + "\" tickets left are: <nothing>";
     }

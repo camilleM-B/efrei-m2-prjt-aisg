@@ -1,4 +1,4 @@
-package trainREST;
+package restserver.restserver;
 
 import java.util.Date;
 
