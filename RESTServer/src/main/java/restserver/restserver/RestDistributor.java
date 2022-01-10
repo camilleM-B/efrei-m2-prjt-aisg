@@ -18,8 +18,7 @@ public class RestDistributor {
  
 		// Attach the application to the component and start it  
 		component.getDefaultHost().attach(new RouterApplication());  
-		component.start();  
-		
+		component.start();
 	}	 
  
 }
