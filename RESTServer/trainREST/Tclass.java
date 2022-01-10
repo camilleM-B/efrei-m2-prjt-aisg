@@ -6,19 +6,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 
-public class Price extends ServerResource {  
+public class Tclass extends ServerResource {
 	@Get  
 	public String toString() {
-		String price = (String) getRequestAttributes().get("price");
-		long lprice = Long.parseLong(price);
+		String Sclass = (String) getRequestAttributes().get("class");
 
-		List<Train> trainList = ReadJson.ListTrain();
-
-		List <List>  idprice = filterTrain(lprice);
+		List <List>  idprice = filterTrain(Sclass);
 		List<String> filtertrain = idprice.get(0);
 		List<Integer> filterprice = idprice.get(1);
 		
@@ -28,13 +26,13 @@ public class Price extends ServerResource {
 		String priceanswer = filterprice.toString();
 		
 		if (filtertrain != null && filtertrain.isEmpty()) { return "No available train"; }
-		
-		return "The items at " + lprice + "  to  bought are Train of IDs: " + trainanswer + "  of corresponding fares: " + priceanswer;
+
+		return "The trains of class " + Sclass + "   are Train of IDs: " +  trainanswer + "  of corresponding fares: " + priceanswer;
 		
 	}
 
 
-	public List <List> filterTrain(long price) {
+	public List <List> filterTrain(String Lclass) {
 
 		List<String> idlist= new ArrayList<>();
 		List<Integer> priceList = new ArrayList<>();
@@ -45,7 +43,7 @@ public class Price extends ServerResource {
 
 		try {
 			Connection connection = DriverManager.getConnection(url,username,password);
-			String sql =  "SELECT * FROM trains WHERE price ="+ price;
+			String sql =  "SELECT * FROM trains WHERE travelClass = '"+ Lclass +"'";
 			Statement stat = connection.createStatement();
 			ResultSet result = stat.executeQuery(sql);
 

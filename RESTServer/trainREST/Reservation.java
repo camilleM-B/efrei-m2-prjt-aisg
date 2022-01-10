@@ -16,7 +16,6 @@ public class Reservation {
         String password = "timothe123";
 
         try {
-            System.out.println("connect to databse");
             Connection connection = DriverManager.getConnection(url,username,password);
 
             //get actual remainingtickets
@@ -35,7 +34,7 @@ public class Reservation {
 
             //if tickets available update
 
-            String sql2 =  "UPDATE trains SET remainingTickets =remainingTickets-1 WHERE id ='"+ id.trim()+"' AND remainingTickets < 0";
+            String sql2 =  "UPDATE trains SET remainingTickets =remainingTickets-1 WHERE id ='"+ id.trim()+"' AND remainingTickets > 0";
             stat.executeUpdate(sql2);
             connection.close();
 

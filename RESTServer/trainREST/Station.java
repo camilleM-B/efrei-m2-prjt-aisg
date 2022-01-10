@@ -14,8 +14,6 @@ public class Station extends ServerResource {
 		String dstation = (String) getRequestAttributes().get("dstation");
 		String astation = (String) getRequestAttributes().get("astation");
 
-		List<Train> trainList = ReadJson.ListTrain();
-
 		List <List>  idprice = filterTrain(dstation,astation);
 		List<String> filtertrain = idprice.get(0);
 		List<Integer> filterprice = idprice.get(1);
