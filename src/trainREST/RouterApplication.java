@@ -1,6 +1,5 @@
 package trainREST;
 
-
 import org.restlet.Application;
 import org.restlet.Restlet;
 import org.restlet.routing.Router;
@@ -16,7 +15,7 @@ public class RouterApplication extends Application{
 		// Defines only two routes
 		router.attach("/station/{dstation}/{astation}", Station.class);
 		
-		router.attach("/price/{price}/", Price.class);
+		router.attach("/price/{price}", Price.class);
 		return router;
 	}
 }

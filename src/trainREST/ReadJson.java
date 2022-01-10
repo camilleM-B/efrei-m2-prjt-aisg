@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.swing.Spring;
 
@@ -19,8 +20,9 @@ public class ReadJson {
 	public static List<Train> trainList = new ArrayList<Train>();
 	
 	@SuppressWarnings("unchecked")
-	public static void main(String[] args) 
+	public static List<Train> ListTrain() 
 	{
+
 		//JSON parser object to parse read file
 		JSONParser jsonParser = new JSONParser();
 		
@@ -30,7 +32,7 @@ public class ReadJson {
             Object obj = jsonParser.parse(reader);
 
             JSONArray trainSample = (JSONArray) obj;
-            System.out.println(trainSample);
+           // System.out.println(trainSample);
             
             //Iterate over employee array
             trainSample.forEach( tr -> parseTrain( (JSONObject) tr ) );
@@ -43,7 +45,9 @@ public class ReadJson {
             e.printStackTrace();
         }
 		
-        trainList.get(1).display();
+		/*removeDuplicates();
+		trainList.forEach( tr -> tr.display() );*/
+		return trainList;
 
 	}
 
@@ -81,8 +85,10 @@ public class ReadJson {
 		
 		trainList.add(mytrain);
 		
-
-		
+	}
+	
+	public static void removeDuplicates() {
+		trainList = trainList.stream().distinct().collect(Collectors.toList());
 	}
 
 }

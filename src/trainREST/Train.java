@@ -17,6 +17,11 @@ public class Train {
     	 System.out.println("id "+id+" \r dstation" + departureStation + "\r price "+ price);
     }
     
+    public String displayString() {
+   	 return ("id "+id+" \r dstation" + departureStation + "\r price "+ price);
+   }
+    
+        
     public Train(String id, String departureStation, String arrivalStation, String outboundDate, String returnDate, long totalTickets
     , long remainingTickets, String travelClass, long price) {
     	
@@ -30,4 +35,7 @@ public class Train {
     	this.travelClass = travelClass;
     	this.price = price;
     }
+    
+    public long getPrice() {return this.price;}
+    public String getId() {return this.id;}
 }
