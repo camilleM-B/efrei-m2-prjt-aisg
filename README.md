@@ -28,6 +28,8 @@ Client <-> SOAP Train booking <-> REST Train filtering
 * this project use jdk 14
 * install the jar found in the jar files
 * launch the RestDistributor class
+* launch Tomcat
+* Go to this url: ""
 
 
 ##Self-evaluation
@@ -38,16 +40,26 @@ Client <-> SOAP Train booking <-> REST Train filtering
 [amelioration possible = add something so that only train with available tickets are displayed? Not pratical if someone want to just check the arrival of a relative for exemple]
 
 -: The filtering only be done with a predefined number and type of criteria
-* Create SOAP Train Booking service A ------------------------------------------------------- 4/4
-* Interaction between two services ------------------------------------------------------------- 4/4
-* Test with Web service Client (instead of using Eclipse's Web service Explorer) - 2/2
-* Work with complex data type (class, table, etc.) ------------------------------------------ 0/2
+* Create SOAP Train Booking service A ------------------------------------------------------- X/4
+* Interaction between two services ------------------------------------------------------------- X/4
+* Test with Web service Client (instead of using Eclipse's Web service Explorer) - 1/2
+
+-: We did not made a GUI for all possibles interactions
+
+* Work with complex data type (class, table, etc.) ------------------------------------------ 1/2
+
++: We used different classes to organize the different url routing possibilities corresponding to the different filters available.
 
 -: We only used arrayList as they were the simplest way to stock and transfer data between our functions
 * Work with database (in text file, xml, in mysql, etc.) ------------------------------------- 2/2
 
-We used a persistent mysql database to stock the trains
-* Postman --------------------------------------------------------------------------------------------- 2/2
-* OpenAPI --------------------------------------------------------------------------------------------- 3/3
++: We used a persistent mysql database to stock the trains. We use queries to directly filter results in the database and can update it.
+* Postman --------------------------------------------------------------------------------------------- X/2
+* OpenAPI --------------------------------------------------------------------------------------------- 1/3
+
++: The test done compile and send to the correct url
+
+-: It does not fetch any results even through it do access the correct url, we suspect that the page do not send an acceptable format of data regarding what has been definied.
+Since our first test did not work we did not do an OpenApi for the full scope of our project
 
 TOTAL ------------------------------------------------------------------------------------------------------ X/25

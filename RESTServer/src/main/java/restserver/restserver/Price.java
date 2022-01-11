@@ -27,7 +27,6 @@ public class Price extends ServerResource {
         List<String> filtertrain = idprice.get(0);
         List<Integer> filterprice = idprice.get(1);
 
-        //List <String> filterprice = filtertrain.stream().map(Train::getId).collect(Collectors.toList());
 
         String trainanswer = filtertrain.toString();
         String priceanswer = filterprice.toString();

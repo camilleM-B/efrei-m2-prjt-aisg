@@ -7,6 +7,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
     private String message;
@@ -35,7 +42,7 @@ public class HelloServlet extends HttpServlet {
                 "</form>");
 
         // List of all trains
-        for(Train train : trains) {
+        for (Train train : trains) {
             out.println(train);
         }
         out.println("</body></html>");
@@ -50,24 +57,29 @@ public class HelloServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
 
         // Depending on the tickets left, gives a different result
-        switch(trainsObj.sellTicket(idProvided)) {
+        switch (trainsObj.sellTicket(idProvided)) {
             case "OK":
-                trains = trainsObj.getArray();
+                trains = trainsObj.update();
                 pw.println("<h2>");
                 pw.println("Thank you " + nameProvided + " for your order!!");
                 pw.println("</h2><h3>");
                 pw.println("Train details:</h3></br>");
                 pw.println(trainsObj.getTrain(idProvided));
                 break;
-            case "NOTICKET":
-                pw.println("<h2>");
-                pw.println("Sorry " + nameProvided);
-                pw.println("!</h2><h3>No tickets left</h3>");
-                break;
-            case "NOTRAIN":
-                pw.println("<h2>");
-                pw.println("Sorry " + nameProvided);
-                pw.println("!</h2><h3>Train hasn't been found</h3>");
+            case "KO":
+                String currTrain = trainsObj.getTrain(idProvided);
+                // Ticket existing but not available
+                if(currTrain != "KO") {
+                    pw.println("<h2>");
+                    pw.println("Sorry " + nameProvided);
+                    pw.println("!</h2><h3>No tickets left</h3>");
+                    pw.println(currTrain);
+                // Train not found
+                } else {
+                    pw.println("<h2>");
+                    pw.println("Sorry " + nameProvided);
+                    pw.println("!</h2><h3>Train hasn't been found</h3>");
+                }
                 break;
             default:
                 pw.println("<h2>Error</h2>");
@@ -76,6 +88,8 @@ public class HelloServlet extends HttpServlet {
 
         pw.println("</br><a href=\"hello-servlet\">Go back</a>");
     }
+
+
 
     public void destroy() {
     }

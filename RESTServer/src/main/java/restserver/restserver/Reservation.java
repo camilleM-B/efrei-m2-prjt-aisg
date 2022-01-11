@@ -1,16 +1,15 @@
 package restserver.restserver;
 
+import org.restlet.resource.Put;
+import org.restlet.resource.ServerResource;
 
 import java.sql.*;
 
-public class Reservation {
+public class Reservation extends ServerResource{
+    @Put
+    public String reservation() throws ClassNotFoundException, SQLException {
+        String id = (String) getRequestAttributes().get("id");
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        boolean test = reservation("ed0830d6-71fc-11ec-981f-a81e84e24716");
-        System.out.println(test);
-    }
-
-    public static boolean reservation(String id) throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
         Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/tp_aisg_efrei", "postgres", "camille");
         Statement stmt = conn.createStatement();
@@ -23,7 +22,7 @@ public class Reservation {
         }
 
         if (remaining == 0) {
-            return false;
+            return "false";
         }
 
         //if tickets available update
@@ -31,6 +30,6 @@ public class Reservation {
         String sql2 = "UPDATE trains SET remainingTickets =remainingTickets-1 WHERE id ='" + id.trim() + "' AND remainingTickets > 0";
         stmt.executeUpdate(sql2);
         conn.close();
-        return true;
+        return "true";
     }
 }

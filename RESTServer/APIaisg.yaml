@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: AISG project API
+  description: An API to illustrate the architecture and is gouvernence project of Camille MATHIEU & Timothé CHAUVET
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8189'
+paths:
+  /ticket/{nbrtickets} :
+    get:
+      description: Returns a list of train with a specified number of tickets
+      parameters:
+        - in: path
+          name: nbrtickets
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successfully return trains
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: string
+                      example: ed0830d6-71fc-11ec-981f-a81e84e24716
+
+        400:
+          description: No available trains

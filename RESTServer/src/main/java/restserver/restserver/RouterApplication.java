@@ -3,7 +3,8 @@ package restserver.restserver;
 import org.restlet.Application;
 import org.restlet.Restlet;
 import org.restlet.routing.Router;
- 
+//import sun.security.krb5.internal.Ticket;
+
 public class RouterApplication extends Application{
 	/**
 	 * Creates a root Restlet that will receive all incoming calls.
@@ -16,8 +17,12 @@ public class RouterApplication extends Application{
 		//router.attach("/{dstation}/{astation}/{ddate}/{adate}/{nbrtickets}/{class}", Full.class);
 		router.attach("/station/{dstation}/{astation}", Station.class);
 		router.attach("/class/{class}", Tclass.class);
+		router.attach("/ticket/{nbrtickets}", Ticket.class);
+		router.attach("/price/{price}", Price.class);
+		router.attach("/train", Train.class);
+		router.attach("/reservation/{id}", Reservation.class);
 
-		router.attach("/tickets/{nbrtickets}", Ticket.class);
+
 		return router;
 	}
 
